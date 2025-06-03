@@ -430,7 +430,6 @@ h3{
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s ease;
-  margin-right: 3rem;
 }
 @media (max-width: 768px) {
   .flecha-arriba {
@@ -564,7 +563,7 @@ html {
   text-decoration: none;
   transition: transform 0.2s ease, background-color 0.3s;
   margin-bottom: 3.5rem;
-  margin-right: 3rem;
+  margin-right: 5rem;
 }
 
 .botones-contacto .whatsapp {
