@@ -432,6 +432,11 @@ h3{
   transition: background-color 0.3s ease;
   margin-right: 2rem;
 }
+@media (max-width: 768px) {
+  .flecha-arriba {
+    margin-right: 2rem;
+  }
+}
 
 .flecha-arriba:hover {
   background-color: grey;
@@ -561,7 +566,13 @@ html {
   margin-left: 5rem;
   margin-right: 2rem;
 }
-
+@media (max-width: 768px) {
+  .botones-contacto a {
+  margin-bottom: 3.5rem;
+  margin-left: 5rem;
+  margin-right: 2rem;
+  }
+}
 .botones-contacto .whatsapp {
   background-color: #25D366;
 }
