@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autos en Venta</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+	<header id="inicio">
+     <div class="logo">
+     	<svg xmlns="http://www.w3.org/2000/svg" viewBox="110 0 500 120" height="100">
+  <rect width="500" height="120" fill="black" />
+  <g>
+    <!-- Auto icono -->
+    <path d="M100 60h40l10-20h80l10 20h40a20 20 0 0 1 20 20v10h-10a20 20 0 0 1 -40 0h-80a20 20 0 0 1 -40 0h-10v-10a20 20 0 0 1 20-20z"
+      fill="#003366"/>
+    <circle cx="140" cy="90" r="10" fill="white"/>
+    <circle cx="260" cy="90" r="10" fill="white"/>
+  </g>
+  <!-- Texto del logo -->
+  <text x="120" y="30" font-family="Arial, sans-serif" font-size="35" fill="white">
+    AutoExpress
+  </text>
+</svg>
+
+  </div>
+    <nav class="nav">
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <ul id="menu" class="menu">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#Vehiculos">Vehiculos</a></li>
+      <li><a href="#Usados">Usados</a></li>
+      <li><a href="#financiacion">Financiación</a></li>
+      <li><a href="#porque-elegirnos">Beneficios</a></li>
+      <li><a href="#clientes">Clientes</a></li>
+      <li><a href="#Contacto">Contacto</a></li>
+</ul>
+<script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    toggle.addEventListener('click', () => {
+    menu.classList.toggle('show');
+     });
+</script>
+
+    </nav>
+  </header>
+
+<!-- Sección de Carousel-->
+
+<section id="carousel" class="carousel animado">
+   <div class="carousel">
+  <button class="prev">&#10094;</button>
+  
+  <div class="carousel-track-container">
+    <ul class="carousel-track">
+
+      <li class="carousel-slide current-slide"><img src="imagenes/carousel1.webp" alt="Auto 1"><div class="texto-encima2">Obtené tu primer Auto</div>
+      <div class="texto-encima">Elegí el plan que mejor se adapta a tus necesidades.</div></li>
+
+      <li class="carousel-slide"><img src="imagenes/carousel2.webp" alt="Auto 2"><div class="texto-encima3">Entrega Inmediata</div>
+      <div class="texto-encima4">Listo para entregar. Sin trámites complicados.</div></li>
+
+      <li class="carousel-slide"><img src="imagenes/carousel3.webp" alt="Auto 3"><div class="texto-encima5">Financiación disponible</div>
+
+      <div class="texto-encima6">Crédito aprobado en minutos. Consultá ahora.</div></li>
+    </ul>
+  </div>
+  <button class="next">&#10095;</button>
+</div>
+
+</section>
+ <script>
+  const track = document.querySelector('.carousel-track');
+  const slides = Array.from(track.children);
+  const nextButton = document.querySelector('.next');
+  const prevButton = document.querySelector('.prev');
+  let currentIndex = 0;
+
+  function updateSlide(position) {
+    const container = document.querySelector('.carousel-track-container');
+    const slideWidth = container.clientWidth;
+    track.style.transform = 'translateX(-' + (slideWidth * position) + 'px)';
+  }
+
+  // Avanzar con flechas
+  nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlide(currentIndex);
+  });
+
+  prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateSlide(currentIndex);
+  });
+
+  // 🚀 Cambio automático cada 4 segundos
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlide(currentIndex);
+  }, 20000); // 4000 milisegundos = 4 segundos
+
+  // Asegura que inicie en la posición correcta
+  window.addEventListener('load', () => {
+    updateSlide(0);
+  });
+</script>
+
+
+
+<!-- Sección de Vehiculos -->
+<section id="Vehiculos" class="Vehiculos animado">
+<div class="texto-autos">Comprá hoy, manejá mañana. Entrega inmediata.</div>
+
+ <div class="slider">
+  <div class="slide-track">
+    <div class="slide"><img src="imagenes/auto1.webp" alt="Auto 1">
+    <p class="descripcion-slide">Chevrolet Onix 2025</p>
+    <button class="descubrir">Descubrí más</button></div>
+
+    <div class="slide"><img src="imagenes/auto2.webp" alt="Auto 2">
+    <p class="descripcion-slide">Ford Fiesta 2025</p>
+    <button class="descubrir">Descubrí más</button></div>
+
+    <div class="slide"><img src="imagenes/auto3.webp" alt="Auto 3">
+    <p class="descripcion-slide">Toyota Corolla 2025</p>
+    <button class="descubrir">Descubrí más</button></div>
+
+    <div class="slide"><img src="imagenes/auto4.webp" alt="Auto 4">
+    <p class="descripcion-slide">Renault Sandero Stepway 2025</p>
+    <button class="descubrir">Descubrí más</button></div>
+
+    <div class="slide"><img src="imagenes/auto5.webp" alt="Auto 5">
+    <p class="descripcion-slide">Volkswagen Gol Trend 2025</p>
+    <button class="descubrir">Descubrí más</button></div>
+
+    <!-- Repite las mismas para un bucle continuo -->
+  <div class="slide"><img src="imagenes/auto1.webp" alt="Auto 1">
+    <p class="descripcion-slide">Chevrolet Onix 2025</p>
+    <button class="descubrir">Descubrí más</button></div>
+
+    <div class="slide"><img src="imagenes/auto2.webp" alt="Auto 2">
+    <p class="descripcion-slide">Ford Fiesta 2025</p>
+    <button class="descubrir">Descubrí más</button></div>
+
+    <div class="slide"><img src="imagenes/auto3.webp" alt="Auto 3">
+    <p class="descripcion-slide">Toyota Corolla 2025</p>
+    <button class="descubrir">Descubrí más</button></div>
+
+    <div class="slide"><img src="imagenes/auto4.webp" alt="Auto 4">
+    <p class="descripcion-slide">Renault Sandero Stepway 2025</p>
+    <button class="descubrir">Descubrí más</button></div>
+
+    <div class="slide"><img src="imagenes/auto5.webp" alt="Auto 5">
+    <p class="descripcion-slide">Volkswagen Gol Trend 2025</p>
+    <button class="descubrir">Descubrí más</button></div>
+  </div>
+</div>
+
+<div id="descripcion-autos" class="descripcion-detalle">
+  <h2>Viví la experiencia de estrenar</h2>
+  <div class="detalle-auto">
+  <img id="imagen-auto" src="" alt="Imagen del auto" class="imagen-detalle" style="display: none;">
+  <div class="info-auto">
+      <p id="precio-auto" class="precio-auto"></p>
+      <p id="texto-auto" class="texto-detalle">Seleccioná un auto para ver su descripción.</p>
+      <a href="#financiacion" class="boton-financiar" id="boton-financiar" style="display: none;">Quiero financiar mi auto</a>
+    </div>
+</div>
+</div>
+
+<script>
+  const botonFinanciar = document.getElementById('boton-financiar');
+  const botones = document.querySelectorAll('.descubrir');
+  const textoAuto = document.getElementById('texto-auto');
+  const imagenAuto = document.getElementById('imagen-auto');
+  const precioAuto = document.getElementById('precio-auto');
+  const valor= document.getElementById('precio-auto');
+
+  const descripciones = [
+    "Chevrolet Onix. Compacto, eficiente y moderno. Este Onix ofrece un motor 1.2L ideal para uso urbano, con excelente rendimiento de combustible y un diseño elegante. Equipado con conectividad Bluetooth, aire acondicionado, doble airbag y frenos ABS. Perfecto como primer auto o para uso diario con bajo costo de mantenimiento.",
+    "Ford Fiesta. Ágil, confiable y con espíritu juvenil. Este Fiesta cuenta con un motor 1.6L que responde bien en ciudad y ruta. Interior cómodo con pantalla táctil, conectividad SYNC, dirección asistida y un baúl ideal para el día a día. Ideal para quienes buscan buen diseño, consumo razonable y calidad Ford.",
+    "Toyota Corolla. Referente de calidad y durabilidad. El Corolla se presenta con caja automática CVT, excelente insonorización, acabados premium y un andar suave. Su motor 1.8L híbrido o naftero ofrece potencia eficiente, ideal para quienes priorizan seguridad, confort y prestigio sin dejar de lado el ahorro.",
+    "Renault Sandero Stepway. Un hatchback con estilo aventurero. El Stepway combina un diseño robusto, mayor altura respecto al suelo y barras de techo para un look SUV. Ideal para escapadas y ciudad, su motor 1.6L y su espacio interior lo hacen muy versátil. Cuenta con sensores de reversa, pantalla táctil y gran capacidad de carga.",
+    "Volkswagen Gol Trend. Uno de los modelos más vendidos en Argentina. Este Gol Trend es práctico, confiable y económico. Motor 1.6L, dirección eléctrica, aire, USB, excelente respuesta en ciudad y mantenimiento accesible. Ideal para quienes buscan movilidad eficiente con respaldo Volkswagen.",
+    "Chevrolet Onix. Compacto, eficiente y moderno. Este Onix ofrece un motor 1.2L ideal para uso urbano, con excelente rendimiento de combustible y un diseño elegante. Equipado con conectividad Bluetooth, aire acondicionado, doble airbag y frenos ABS. Perfecto como primer auto o para uso diario con bajo costo de mantenimiento.",
+    "Ford Fiesta. Ágil, confiable y con espíritu juvenil. Este Fiesta cuenta con un motor 1.6L que responde bien en ciudad y ruta. Interior cómodo con pantalla táctil, conectividad SYNC, dirección asistida y un baúl ideal para el día a día. Ideal para quienes buscan buen diseño, consumo razonable y calidad Ford.",
+    "Toyota Corolla. Referente de calidad y durabilidad. El Corolla se presenta con caja automática CVT, excelente insonorización, acabados premium y un andar suave. Su motor 1.8L híbrido o naftero ofrece potencia eficiente, ideal para quienes priorizan seguridad, confort y prestigio sin dejar de lado el ahorro.",
+    "Renault Sandero Stepway. Un hatchback con estilo aventurero. El Stepway combina un diseño robusto, mayor altura respecto al suelo y barras de techo para un look SUV. Ideal para escapadas y ciudad, su motor 1.6L y su espacio interior lo hacen muy versátil. Cuenta con sensores de reversa, pantalla táctil y gran capacidad de carga.",
+    "Volkswagen Gol Trend. Uno de los modelos más vendidos en Argentina. Este Gol Trend es práctico, confiable y económico. Motor 1.6L, dirección eléctrica, aire, USB, excelente respuesta en ciudad y mantenimiento accesible. Ideal para quienes buscan movilidad eficiente con respaldo Volkswagen."
+  ];
+
+  const precios = [
+    "PRECIO SUGERIDO AL PÚBLICO<br>$22.897.000<br><br>PRECIO SIN IMPUESTOS NACIONALES<br>$18.923.140,50",
+    "PRECIO SUGERIDO AL PÚBLICO<br>$18.300.000<br><br>PRECIO SIN IMPUESTOS NACIONALES<br>$15.200.500,00",
+    "PRECIO SUGERIDO AL PÚBLICO<br>$26.450.000<br><br>PRECIO SIN IMPUESTOS NACIONALES<br>$21.870.000,00",
+    "PRECIO SUGERIDO AL PÚBLICO<br>$20.150.000<br><br>PRECIO SIN IMPUESTOS NACIONALES<br>$17.045.000,00",
+    "PRECIO SUGERIDO AL PÚBLICO<br>$19.800.000<br><br>PRECIO SIN IMPUESTOS NACIONALES<br>$16.590.000,00",
+    "PRECIO SUGERIDO AL PÚBLICO<br>$22.897.000<br><br>PRECIO SIN IMPUESTOS NACIONALES<br>$18.923.140,50",
+    "PRECIO SUGERIDO AL PÚBLICO<br>$18.300.000<br><br>PRECIO SIN IMPUESTOS NACIONALES<br>$15.200.500,00",
+    "PRECIO SUGERIDO AL PÚBLICO<br>$26.450.000<br><br>PRECIO SIN IMPUESTOS NACIONALES<br>$21.870.000,00",
+    "PRECIO SUGERIDO AL PÚBLICO<br>$20.150.000<br><br>PRECIO SIN IMPUESTOS NACIONALES<br>$17.045.000,00",
+    "PRECIO SUGERIDO AL PÚBLICO<br>$19.800.000<br><br>PRECIO SIN IMPUESTOS NACIONALES<br>$16.590.000,00"
+  ];
+
+  const imagenes = [
+    "imagenes/auto1.webp",
+    "imagenes/auto2.webp",
+    "imagenes/auto3.webp",
+    "imagenes/auto4.webp",
+    "imagenes/auto5.webp",
+    "imagenes/auto1.webp",
+    "imagenes/auto2.webp",
+    "imagenes/auto3.webp",
+    "imagenes/auto4.webp",
+    "imagenes/auto5.webp"
+  ];
+
+  botones.forEach((btn, i) => {
+  btn.addEventListener('click', () => {
+    textoAuto.textContent = descripciones[i];
+    precioAuto.innerHTML = precios[i];
+    imagenAuto.src = imagenes[i];
+    imagenAuto.style.display = 'block';
+    botonFinanciar.style.display = 'inline-block'; // Mostrar el botón
+    document.getElementById("descripcion-autos").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+</script>
+
+
+<!-- Sección de autos usados -->
+
+<section id="Usados" class="Usados animado">
+<div class="texto-autos">Usados respaldados por AutoExpress</div>
+ <div class="slider" id="slider-usados">
+  <div class="slide-track">
+    <div class="slide"><img src="imagenes/auto6.webp" alt="Auto 1">
+    <p class="descripcion-slide">Ford Ka 2020</p>
+    <button class="descubrir">Descubrí más</button></div>
+
+    <div class="slide"><img src="imagenes/auto7.webp" alt="Auto 2">
+    <p class="descripcion-slide">Peugeot 208 2019</p>
+    <button class="descubrir">Descubrí más</button></div>
+
+    <div class="slide"><img src="imagenes/auto8.webp" alt="Auto 3">
+    <p class="descripcion-slide">Ford EcoSport 2021</p>
+    <button class="descubrir">Descubrí más</button></div>
+
+    <div class="slide"><img src="imagenes/auto9.webp" alt="Auto 4">
+    <p class="descripcion-slide">Fiat Palio 2020</p>
+    <button class="descubrir">Descubrí más</button></div>
+
+    <div class="slide"><img src="imagenes/auto10.webp" alt="Auto 5">
+    <p class="descripcion-slide">Chevrolet Corsa 2021</p>
+    <button class="descubrir">Descubrí más</button></div>
+
+    <!-- Repite las mismas para un bucle continuo -->
+  <div class="slide"><img src="imagenes/auto6.webp" alt="Auto 1">
+    <p class="descripcion-slide">Ford Ka 2020</p>
+    <button class="descubrir">Descubrí más</button></div>
+
+    <div class="slide"><img src="imagenes/auto7.webp" alt="Auto 2">
+    <p class="descripcion-slide">Peugeot 208 2019</p>
+    <button class="descubrir">Descubrí más</button></div>
+
+    <div class="slide"><img src="imagenes/auto8.webp" alt="Auto 3">
+    <p class="descripcion-slide">Ford EcoSport 2021</p>
+    <button class="descubrir">Descubrí más</button></div>
+
+    <div class="slide"><img src="imagenes/auto9.webp" alt="Auto 4">
+    <p class="descripcion-slide">Fiat Palio 2020</p>
+    <button class="descubrir">Descubrí más</button></div>
+
+    <div class="slide"><img src="imagenes/auto10.webp" alt="Auto 5">
+    <p class="descripcion-slide">Chevrolet Corsa 2021</p>
+    <button class="descubrir">Descubrí más</button></div>
+  </div>
+</div>
+<!-- DETALLE PARA AUTOS USADOS -->
+<div id="descripcion-autos-usados" class="descripcion-detalle">
+  <h3>Pagá menos por mucho más</h3>
+  <div class="detalle-auto reverse-layout">
+  <img
+    id="imagen-auto-usado"
+    src=""
+    alt="Imagen del auto"
+    class="imagen-detalle"
+    style="display: none;"
+  />
+  <div class="info-auto">
+    <p id="precio-auto-usado" class="precio-auto"></p>
+    <p id="texto-auto-usado" class="texto-detalle-1">Seleccioná un auto para ver su descripción.</p>
+    <a href="#financiacion" class="boton-financiar" id="boton-financiar-usado" style="display: none;">Quiero financiar mi auto</a>
+  </div>
+</div>
+</section>
+<script>
+	const botonFinanciarUsado = document.getElementById('boton-financiar-usado');
+  const botonesUsados = document.querySelectorAll('#slider-usados .descubrir');
+  const textoAutoUsado = document.getElementById('texto-auto-usado');
+  const imagenAutoUsado = document.getElementById('imagen-auto-usado');
+  const precioAutoUsado = document.getElementById('precio-auto-usado');
+
+  const descripcionesUsados = [
+    "Ford Ka 2020. Compacto, cómodo y ágil. Este Ford Ka es perfecto para la ciudad, con un diseño moderno, buen rendimiento de combustible y excelente maniobrabilidad. Ideal como primer auto o para uso urbano diario.",
+
+    "Peugeot 208 2019. Moderno y elegante. El Peugeot 208 ofrece un diseño atractivo, buena tecnología a bordo, motor eficiente y una conducción suave. Ideal para quienes buscan estilo sin perder practicidad.",
+
+    "Ford EcoSport 2021. SUV urbana versátil y robusta. La EcoSport combina comodidad, altura al suelo, buen espacio interior y un motor confiable. Ideal para quienes necesitan espacio sin renunciar al diseño.",
+
+    "Fiat Palio 2020. Sencillo, económico y confiable. Este Palio es ideal para moverse en la ciudad, con bajo costo de mantenimiento, interior funcional y desempeño eficiente. Una gran opción para presupuestos ajustados.",
+
+    "Chevrolet Corsa 2021. Clásico de confianza. Este Corsa destaca por su durabilidad, bajo consumo y mantenimiento accesible. Ideal como auto familiar o para el día a día, con una mecánica conocida y fácil de mantener.",
+
+      "Ford Ka 2020. Compacto, cómodo y ágil. Este Ford Ka es perfecto para la ciudad, con un diseño moderno, buen rendimiento de combustible y excelente maniobrabilidad. Ideal como primer auto o para uso urbano diario.",
+
+    "Peugeot 208 2019. Moderno y elegante. El Peugeot 208 ofrece un diseño atractivo, buena tecnología a bordo, motor eficiente y una conducción suave. Ideal para quienes buscan estilo sin perder practicidad.",
+
+    "Ford EcoSport 2021. SUV urbana versátil y robusta. La EcoSport combina comodidad, altura al suelo, buen espacio interior y un motor confiable. Ideal para quienes necesitan espacio sin renunciar al diseño.",
+
+    "Fiat Palio 2020. Sencillo, económico y confiable. Este Palio es ideal para moverse en la ciudad, con bajo costo de mantenimiento, interior funcional y desempeño eficiente. Una gran opción para presupuestos ajustados.",
+
+    "Chevrolet Corsa 2021. Clásico de confianza. Este Corsa destaca por su durabilidad, bajo consumo y mantenimiento accesible. Ideal como auto familiar o para el día a día, con una mecánica conocida y fácil de mantener."
+  ];
+
+  const preciosUsados = [
+    "PRECIO SUGERIDO<br>$16.100.000<br><br>PRECIO SIN IMPUESTOS<br>$13.800.000,00",
+    "PRECIO SUGERIDO<br>$17.600.000<br><br>PRECIO SIN IMPUESTOS<br>$14.980.000,00",
+    "PRECIO SUGERIDO<br>$22.500.000<br><br>PRECIO SIN IMPUESTOS<br>$19.300.000,00",
+    "PRECIO SUGERIDO<br>$15.700.000<br><br>PRECIO SIN IMPUESTOS<br>$13.200.000,00",
+    "PRECIO SUGERIDO<br>$14.900.000<br><br>PRECIO SIN IMPUESTOS<br>$12.450.000,00",
+    "PRECIO SUGERIDO<br>$16.100.000<br><br>PRECIO SIN IMPUESTOS<br>$13.800.000,00",
+    "PRECIO SUGERIDO<br>$17.600.000<br><br>PRECIO SIN IMPUESTOS<br>$14.980.000,00",
+    "PRECIO SUGERIDO<br>$22.500.000<br><br>PRECIO SIN IMPUESTOS<br>$19.300.000,00",
+    "PRECIO SUGERIDO<br>$15.700.000<br><br>PRECIO SIN IMPUESTOS<br>$13.200.000,00",
+    "PRECIO SUGERIDO<br>$14.900.000<br><br>PRECIO SIN IMPUESTOS<br>$12.450.000,00"
+  ];
+
+  const imagenesUsados = [
+    "imagenes/auto6.webp",
+    "imagenes/auto7.webp",
+    "imagenes/auto8.webp",
+    "imagenes/auto9.webp",
+    "imagenes/auto10.webp",
+    "imagenes/auto6.webp",
+    "imagenes/auto7.webp",
+    "imagenes/auto8.webp",
+    "imagenes/auto9.webp",
+    "imagenes/auto10.webp"
+
+  ];
+
+  botonesUsados.forEach((btn, i) => {
+  btn.addEventListener('click', () => {
+    textoAutoUsado.textContent = descripcionesUsados[i];
+    precioAutoUsado.innerHTML = preciosUsados[i];
+    imagenAutoUsado.src = imagenesUsados[i];
+    imagenAutoUsado.style.display = 'block';
+    botonFinanciarUsado.style.display = 'inline-block'; // Mostrar el botón
+    document.getElementById("descripcion-autos-usados").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+</script>
+
+
+
+<!-- Sección de financiacion -->
+<hr class="separador">
+<section id="financiacion" class="financiacion animado">
+  <h2>Simulá tu plan de financiación</h2>
+  <p>Ingresá un monto estimado y elegí la cantidad de cuotas. ¡Es rápido y sin compromiso!</p>
+
+  <form class="simulador-financiacion" onsubmit="return false;">
+    <input type="number" id="monto" placeholder="Precio del auto ($)" required />
+    <select id="cuotas">
+      <option value="12">12 cuotas</option>
+      <option value="24">24 cuotas</option>
+      <option value="36">36 cuotas</option>
+      <option value="48">48 cuotas</option>
+    </select>
+    <button onclick="simularFinanciacion()">Calcular cuota</button>
+  </form>
+
+  <div id="resultado-cuota" class="resultado-cuota"></div>
+</section>
+
+<script>
+  function simularFinanciacion() {
+    const monto = parseFloat(document.getElementById('monto').value);
+    const cuotas = parseInt(document.getElementById('cuotas').value);
+    const interesAnual = 0.30; // 30% anual estimado
+    const tasaMensual = interesAnual / 12;
+    
+    if (isNaN(monto) || monto <= 0) {
+      document.getElementById('resultado-cuota').textContent = "Ingresá un monto válido.";
+      return;
+    }
+
+    // Fórmula de amortización simple (cuota fija aproximada)
+    const cuota = (monto * tasaMensual) / (1 - Math.pow(1 + tasaMensual, -cuotas));
+    const total = cuota * cuotas;
+
+    document.getElementById('resultado-cuota').innerHTML = `
+      <strong>Cuota estimada:</strong> $${cuota.toFixed(2).toLocaleString('es-AR')} x ${cuotas} meses<br>
+      <strong>Total a pagar:</strong> $${total.toFixed(2).toLocaleString('es-AR')}
+    `;
+  }
+</script>
+
+
+
+<!-- Sección de consecionaria -->
+
+<section id="concesionaria" class="concesionaria animado">
+  <h2>Encontrá tu concesionaria más cercana</h2>
+
+  <div class="concesionaria-info">
+    <div class="concesionaria-datos">
+      <p><strong>📍 Dirección:</strong> Av. Las Baleares 123, Córdoba, Argentina</p>
+      <p><strong>📞 Teléfono:</strong> (0351) 555-1234</p>
+      <p><strong>📧 Email:</strong> ventas@autoexpress.com.ar</p>
+      <p><strong>🕒 Horario:</strong> Lunes a Sábado de 9:00 a 18:00 hs</p>
+    </div>
+
+    <!-- Google Maps iframe opcional -->
+    <div class="concesionaria-mapa">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13612.67977384168!2d-64.1887762!3d-31.4200836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943297319a6c5d9b%3A0x65c474f3c5f8b9db!2sC%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1616510919984!5m2!1ses-419!2sar"
+        width="100%"
+        height="250"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+
+<div class="botones-contacto">
+  <a href="https://wa.me/3425376255" class="whatsapp"
+     data-title-es="Enviar WhatsApp"
+     data-title-en="Send WhatsApp"
+     title="Enviar WhatsApp"
+     target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+</div>
+
+
+<!-- Sección de porque elegirnos -->
+<hr class="separador">
+<section id="porque-elegirnos" class="porque-elegirnos animado">
+  <h2>¿Por qué elegir AutoExpress?</h2>
+
+  <div class="beneficios">
+    <div class="beneficio">
+      <h3>Entrega inmediata</h3>
+      <p>Contamos con stock disponible para que te lleves tu auto en 24 horas.</p>
+    </div>
+
+    <div class="beneficio">
+      <h3>Financiación flexible</h3>
+      <p>Accedé a planes a medida, con cuotas accesibles y aprobación rápida.</p>
+    </div>
+
+    <div class="beneficio">
+      <h3>Garantía y respaldo</h3>
+      <p>Todos nuestros autos cuentan con revisión técnica y garantía de 6 meses.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<hr class="separador">
+<!-- Sección de Testimonios -->
+<section id="clientes" class="testimonios animado">
+  <h2>Lo que dicen nuestros clientes</h2>
+
+  <div class="testimonio">
+    <p class="comentario">"¡Excelente atención! Me entregaron el auto en 24 horas, todo muy claro desde el primer momento."</p>
+    <p class="cliente">- Mariana G., CABA</p>
+  </div>
+
+  <div class="testimonio">
+    <p class="comentario">"Compré un usado y parecía nuevo. Me asesoraron con el plan de financiación y fue muy accesible."</p>
+    <p class="cliente">- Diego F., Córdoba</p>
+  </div>
+
+  <div class="testimonio">
+    <p class="comentario">"Gran experiencia. Encontré el auto ideal para mi familia, y la atención fue personalizada."</p>
+    <p class="cliente">- Laura M., Rosario</p>
+  </div>
+</section>
+<hr class="separador">
+
+
+
+ <!-- Sección de contacto -->
+<section id="Contacto" class="formulario-contacto">
+<script>
+    const Contacto = document.getElementById('Contacto');
+
+    Contacto.addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert("✅ Tu mensaje fue enviado, en breve nos comunicaremos contigo.");
+    formulario.reset(); 
+  });
+</script>
+  <h2>Contactanos a través de nuestros canales de atención y agendá tu test-drive.</h2>
+  <p class="subcomentario">¡Estás a pocos pasos de estrenar el Auto de tus sueños!</p>
+<section id="seccion-contacto" class="formulario-contacto animado">
+  <form class="formulario">
+    <div class="campo">
+      <label for="nombre">Nombre</label>
+      <input class="input-text" type="text" id="nombre" name="nombre" placeholder="Tu Nombre" required>
+    </div>
+
+    <div class="campo">
+      <label for="telefono">Número de Teléfono</label>
+      <input class="input-text" type="tel" id="telefono" name="telefono" placeholder="Tu número" required>
+    </div>
+
+    <div class="campo">
+      <label for="correo">Correo Electrónico</label>
+      <input class="input-text" type="email" id="correo" name="correo" placeholder="Tu Correo" required>
+    </div>
+
+    <div class="campo">
+      <label for="mensaje">Mensaje</label>
+      <textarea class="input-text" id="mensaje" name="mensaje" placeholder="Escribí tu mensaje aquí" required></textarea>
+    </div>
+
+    <div class="alinear-derecha">
+      <button type="submit" class="boton-enviar">Enviar</button>
+    </div>
+
+
+  </form>
+</section>
+</section>
+
+<!-- Sección de flecha arriba y Redes-->
+<a href="#inicio" class="flecha-arriba">&uarr;</a>
+  <footer>
+    <p>© 2025 Autos en Venta. Todos los derechos reservados.</p>
+    <div class="redes">
+    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+  </footer>
+
+  <script>
+  const animados = document.querySelectorAll('.animado');
+
+  function mostrarAnimados() {
+    animados.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      const alturaPantalla = window.innerHeight;
+
+      if (top < alturaPantalla - 100) {
+        el.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', mostrarAnimados);
+  window.addEventListener('load', mostrarAnimados); // por si ya están en pantalla
+</script>
+
+</body>
+</html>
