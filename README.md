@@ -1,49 +1,43 @@
-# 🚗 AutoExpress - Proyecto en Práctica
+# 🚗 Concesionaria Web
 
-¡Hola! Este es un proyecto de **página de autos en venta** que estoy desarrollando para **practicar y mejorar mis habilidades en HTML, CSS y JavaScript** mientras aprendo y aplico nuevas técnicas.
+Este proyecto es una **página web para una concesionaria de autos**, desarrollada con **HTML, CSS y JavaScript**.  
+Es una versión mejorada de un proyecto anterior, donde fui aplicando los conocimientos que adquirí con el tiempo, poniendo especial foco en el diseño moderno, la experiencia de usuario y la organización del código.
 
-## ✨ Descripción
+---
 
-AutoExpress es una web responsiva con:
-- **Carrusel con imágenes y textos animados.**
-- **Sección de autos nuevos y usados con detalle al click.**
-- **Simulador de financiación básico.**
-- **Formulario de contacto funcional.**
-- **Diseño adaptado para escritorio y móvil.**
-- **Animaciones suaves y flecha de subida fija.**
+## ✨ Características principales
+- 🌐 **Diseño responsive** con menú hamburguesa para dispositivos móviles.  
+- 🎥 **Carousel con videos** y textos dinámicos.  
+- 🚘 **Galería filtrable** con autos 0km y usados.  
+- 📊 **Sliders interactivos** para mostrar vehículos destacados.  
+- 💰 **Simulador de financiación** funcional.  
+- ⭐ **Sección de beneficios** y **testimonios** con diseño mejorado.  
+- 📩 **Formulario de contacto** con validación y feedback al usuario.  
+- 📱 **Botón flotante de WhatsApp** y flecha elegante para volver arriba.  
 
-El objetivo de este proyecto es **practicar estructuras, animaciones, eventos, y maquetación responsiva** mientras aprendo de cada error y mejora.
+---
 
-## 🚀 Tecnologías utilizadas
+## 🛠️ Tecnologías utilizadas
+- **HTML5**  
+- **CSS3 (Flexbox, Grid, Animaciones, Media Queries)**  
+- **JavaScript (DOM, eventos, validaciones)**  
+- **Font Awesome** (para íconos)  
 
-- **HTML5**
-- **CSS3 (con media queries y animaciones)**
-- **JavaScript puro (sin frameworks)**
-- Uso de **flexbox y grid** para responsividad.
-- Práctica de lógica de simuladores simples en JS.
+---
 
-## ⚠️ Estado del proyecto
+## 📌 Aprendizajes
+- Cómo organizar y estructurar un proyecto más grande con HTML, CSS y JS.  
+- Mejores prácticas para **responsive design**.  
+- Uso de **gradientes, animaciones y transiciones** para lograr un diseño más atractivo.  
+- Implementación de formularios con validación y mensajes de éxito.  
 
-Este proyecto está **en constante aprendizaje y mejora**. Todavía sigo aprendiendo:
-- Cómo mejorar la estructura del código.
-- Optimización y refactorización de JavaScript.
-- Buenas prácticas de accesibilidad.
-- Estrategias para hacer la página más ligera.
+---
 
-Si encontrás detalles a mejorar, ¡toda sugerencia es bienvenida! 🙏
 
 ## 📸 Vista previa
 
-> Podés ver la demo online aquí: [Ver Proyecto](https://ianpallero03.github.io/Heladeria_YO/) *(Nota: cambiar por el link de AutoExpress cuando lo subas)*
+> Podés ver la demo online aquí: [Ver Proyecto](https://ianpallero03.github.io/Venta_de_autos/) 
 
-## 💻 Cómo clonar y probar
-
-```bash
-git clone https://github.com/tuusuario/AutoExpress.git
-cd AutoExpress
-```
-
-Abrí `index.html` en tu navegador y navegá por el proyecto.
 
 ## ✍️ Autor
 
